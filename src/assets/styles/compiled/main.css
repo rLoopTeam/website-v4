@@ -1,0 +1,444 @@
+/*== variables ==*/
+/*/////////// Make navbar work without JS (progressive enhancement) ///////////*/
+#navbar-toggle-cbox {
+  display: none;
+}
+#navbar-toggle-cbox:checked ~ .collapse {
+  display: block;
+}
+/*//////////// Utility ///////*/
+.clearfix:after {
+  content: " ";
+  display: block;
+  height: 0;
+  clear: both;
+}
+/*//////// globals ////////*/
+body {
+  background-color: #101010;
+  min-width: 450px;
+  /*font-family: Arial;*/
+  font-family: 'latoregular', sans-serif;
+  font-weight: 200;
+  font-size: 16px;
+  color: #d1d0d0;
+  margin: 0;
+  padding: 0;
+}
+main {
+  top: 0;
+  width: 100%;
+}
+h2,
+.h2 {
+  font-size: 2.5em;
+  margin: 0;
+}
+.page h2 {
+  text-align: center;
+  color: #b7b7b7;
+  text-shadow: rgba(49, 49, 49, 0.67) 2px 1px;
+}
+.centered-link {
+  margin: 0 auto;
+}
+/* text shadow*/
+.page ul li,
+.page p {
+  text-shadow: black 1px 1px;
+}
+/*//////////////   details   ////////////*/
+.header-spacer {
+  margin: 0 auto;
+  margin-bottom: 15px;
+  text-align: center;
+}
+.glyph {
+  display: inline-block;
+  background: url('../images/spritesheet.png') no-repeat;
+}
+.glyph.tree-spacer {
+  background-position: -3px -11px;
+  width: 381px;
+  height: 54px;
+}
+/*////// content utitlity classes   //////*/
+.content.vertical-split {
+  white-space: nowrap;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+.content.vertical-split > article,
+.content.vertical-split .inner-content {
+  white-space: normal;
+  width: 50%;
+  display: inline-block;
+  vertical-align: top;
+  padding: 0 20px;
+  margin-bottom: 50px;
+}
+.content.single-column {
+  width: auto;
+  margin: 0 auto;
+}
+img.split-image {
+  text-align: center;
+  width: 100%;
+}
+img.split-image {
+  max-width: 500px;
+  max-height: 300px;
+  text-align: center;
+  width: 100%;
+}
+img.split-image.small {
+  max-width: 250px;
+  max-height: 150px;
+}
+ul.image-grid {
+  list-style: none;
+  list-style-type: none;
+  list-style-position: inside;
+  padding: 0;
+  -moz-column-count: 2;
+  -webkit-column-count: 2;
+  column-count: 2;
+  -moz-column-gap: 10px;
+  -webkit-column-gap: 10px;
+  column-gap: 0px;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+ul.image-grid li {
+  position: relative;
+  margin-bottom: 20px;
+  text-align: center;
+}
+ul.image-grid.small {
+  -moz-column-count: 3;
+  -webkit-column-count: 3;
+  column-count: 4;
+}
+/*/////////////////// HUD /////////////////////*/
+header {
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  top: 0;
+  background-color: rgba(27, 66, 80, 0.58);
+}
+header > div > div {
+  display: inline-block;
+  width: 20%;
+}
+header .header-logo {
+  cursor: pointer;
+  width: 0px;
+  position: relative;
+  top: -100px;
+  transition: width 0.5s;
+}
+header .header-logo img {
+  width: 100px;
+}
+header .header-logo img:hover {
+  content: url("../images/rlooplogo-hover.png");
+}
+header.header-fixed .header-logo {
+  top: 0;
+  width: 150px;
+}
+header.header-fixed .header-logo {
+  top: 0;
+}
+.header-links {
+  text-shadow: #000000 1px 1px;
+  text-align: center;
+}
+.header-links a {
+  transition: padding 0.15s, background 0.15s;
+  color: #d5e2e4;
+  text-transform: uppercase;
+  display: block;
+  padding: 30px;
+  font-weight: 300;
+  box-shadow: none;
+  transition: box-shadow 0.2s, padding 0.2s;
+  transition-timing-function: cubic-bezier(0.48, 0.18, 0.57, 1.75);
+}
+.header-links a:hover {
+  background-color: rgba(16, 25, 39, 0.72);
+  text-decoration: none;
+  color: #939bc3;
+  font-weight: 600;
+  position: relative;
+  padding-bottom: 25px;
+  box-shadow: #3a6d7b 0 5px;
+}
+.header-links a:focus {
+  outline: none;
+  text-decoration: none;
+}
+.header-fixed > .header-links a {
+  padding: 15px 5px;
+}
+#rloop-logo-wrapper-fixed {
+  position: fixed;
+  width: 100vw;
+  text-align: center;
+  top: 0;
+  transition: top 0.5s;
+}
+#rloop-logo-wrapper-fixed.logo-wrapper-fixed-hidden {
+  top: -150px;
+  transition: top 0.5s;
+}
+#rloop-logo-fixed {
+  width: 150px;
+  margin: 7px;
+}
+.header-bar-treelogo {
+  position: fixed;
+}
+/*///////////////// sprites   /////////////////////*/
+.sprite-wrapper {
+  width: 100%;
+}
+.spritesheet-spacer,
+.spritesheet-tree {
+  max-width: 100%;
+  margin: 0 auto;
+  display: block;
+  background-size: 100%;
+  background-image: url('../images/spritesheet2.png');
+}
+.spritesheet-spacer {
+  background-position: 0 0%;
+  background-size: 100%;
+  content: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAYAAAABQAQMAAAAqQDBnAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAABtJREFUeNrtwTEBAAAAwqD1T20Gf6AAAACA1wAPUAABxvhnSgAAAABJRU5ErkJggg==";
+}
+.spritesheet-tree {
+  background-position: 0 100%;
+  background-size: 505.263158%;
+}
+/*//////////////////// media selction ///////////*/
+ul.media-selection {
+  list-style: none;
+  list-style-type: none;
+  list-style-position: inside;
+  padding: 0;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 50px;
+  transition: visibility 0.5s, opacity 0.5s linear;
+}
+ul.media-selection li {
+  display: inline-block;
+  width: 150px;
+  text-align: center;
+}
+ul.media-selection li a,
+ul.media-selection li a:focus,
+ul.media-selection li a:visited {
+  color: #d5e2e4;
+  text-decoration: none;
+}
+ul.media-selection li a:hover {
+  text-decoration: none;
+  color: #939bc3;
+  font-weight: 600;
+}
+ul.media-selection li.active {
+  border-bottom: #717988 solid 1px;
+}
+ul.media-selection li.active a {
+  font-weight: 600;
+}
+/*//////////////// pages   //////////////////*/
+.page {
+  overflow: hidden;
+  /* fix collapsed margin */
+  padding: 15vh 1em 3em 1em;
+  min-height: 100vh;
+}
+.page.home {
+  overflow: hidden;
+  /* fix collapsed margin */
+  text-align: center;
+  background-image: url(../images/background/image5.jpg);
+  background-position: 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.page.home #rloop-logo-wrapper {
+  margin-top: 25vh;
+  position: relative;
+}
+.page.home img.rloop-logo {
+  width: 100%;
+  max-width: 550px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.page.home .brand {
+  text-align: center;
+  display: block;
+}
+.page.home .brand img {
+  width: 400px;
+}
+.page.gameplay {
+  background-color: #504131;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.75)), url(../images/rune-background.png);
+  background-repeat: no-repeat, repeat;
+  background-position: 0 0;
+  background-size: 100%, 30%;
+}
+.page.story {
+  background-color: black;
+  background-image: url("../images/HighresScreenshot00034_00001.jpg");
+  background-repeat: no-repeat;
+  background-size: auto 1500px;
+  background-position: -250px 0;
+}
+.page.story .videoWrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  /* 16:9 */
+  padding-top: 25px;
+  height: 0;
+}
+.page.story .videoWrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.page.story .header-spacer {
+  margin-bottom: 0;
+}
+.page.media {
+  margin-top: 0;
+  background-color: black;
+  background-image: url("../images/HighresScreenshot00034_00014.jpg");
+  background-repeat: no-repeat;
+  background-size: auto 1000px;
+  background-position: 0 0;
+  background-origin: 0 0;
+  min-height: 950px;
+}
+.page.media .videoWrapper {
+  position: relative;
+  text-align: center;
+}
+.page.news {
+  background-repeat: repeat;
+  background-size: 100%, 40%;
+  background-color: #504131;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.51), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.51)), url(../images/rune-background.png);
+  min-height: 200px;
+  box-shadow: inset rgba(0, 0, 0, 0.66) 0 5px 5px;
+  padding: 15px;
+}
+.page.news article {
+  max-width: 900px;
+  margin: 1em auto;
+  padding: 0.5em;
+  color: #d1d0d0;
+}
+.page.news article img.news-image {
+  width: 100%;
+}
+.page.news article h2 {
+  text-align: left;
+  font-size: 1.6em;
+}
+.page.news article .news-image-wrapper {
+  margin-bottom: 0;
+}
+.page.news article:hover {
+  box-shadow: none;
+}
+.page.store {
+  background-color: black;
+  background-image: url("../images/HighresScreenshot00034_00015.jpg");
+  background-repeat: no-repeat;
+  background-size: auto 1000px;
+  background-position: 0 0;
+  background-origin: border-box;
+}
+/*//////////////  footer   ////////////////////////*/
+#socialicons {
+  float: right;
+  font-size: 2em;
+}
+#socialicons a {
+  color: #7e8994;
+}
+#socialicons a:hover {
+  color: #939bc3;
+}
+.footer-logo img {
+  width: 155px;
+}
+.footer-links {
+  color: #398fd3;
+}
+.footer-links a {
+  color: #cbd8e2;
+  text-decoration: none;
+  font-size: 0.7em;
+}
+.copyright {
+  font-size: 0.65em;
+  color: #6d6d6d;
+  font-weight: 600;
+}
+footer {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  box-shadow: inset 0 5px 10px rgba(0, 0, 0, 0.75);
+}
+footer .inner-wrapper {
+  padding: 0 30px;
+  margin: 30px auto 60px auto;
+  max-width: 1080px;
+  margin-right: auto;
+}
+footer .inner-wrapper a:hover {
+  color: #939bc3;
+}
+footer .inner-wrapper > * {
+  display: inline-block;
+  vertical-align: middle;
+}
+@media (max-width: 600px) {
+  body {
+    font-size: 0.8em;
+  }
+  .footer-logo img {
+    width: 80px;
+  }
+}
+@media (max-width: 900px) {
+  header > div > div {
+    width: 13%;
+  }
+}
+@media (max-width: 480px) {
+  .header-links a {
+    padding: 15px;
+  }
+  .page.home img.rloop-logo {
+    max-width: 600px;
+    width: 100%;
+  }
+}
+@media (max-width: 800px) {
+  header .header-links .header-logo {
+    float: left;
+    margin-top: 5px;
+  }
+}

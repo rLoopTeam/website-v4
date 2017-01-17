@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{{ title }}</title>
+  <meta charset="utf-8" />
+  <link href='https://fonts.googleapis.com/css?family=Chivo:400,900' rel='stylesheet' type='text/css'>
+  
+  <link rel="stylesheet" type="text/css" href="../styles/bootstrap.min.css"/>
+  <link rel="stylesheet" type="text/css" href="../styles/glyphicons-bootstrap.css"/>
+  <link rel="stylesheet" type="text/css" href="../styles/main.css"/>
+  <link rel="stylesheet" type="text/css" href="../styles/font-awesome.min.css"/>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="../styles/fonts.css"/>
+  <link rel="icon" href="../assets/images/favicon-32.png">
+</head>
+<body>
+    <header>
+        <noscript>Oh oh, JavaScript is disabled. Please turn it back on for a better experience! <a href="http://www.enable-javascript.com" target="_blank">Here's how</a></noscript>
+        <div class="header-links">
+            <div><a href="#home-page">Story</a></div>
+            <div><a href="#gameplay-page">Info</a></div>
+            <div href="#home-page" class="header-logo"><img src="rlopLogo.png"></img></div>
+            <div><a href="#media-page">Media</a></div>
+            <div><a href="#store-page">Store</a></div>
+        </div>
+    </header>
+    <main>
+        {% block main %}
+            Main content goes here. If you can see this, something went wrong during compilation!
+        {% endblock %}
+    </main>
+    <footer>
+      <div class="inner-wrapper">
+        <a class="footer-logo" href="index">
+            <img src="../images/rLoopLogo.png">
+        </a>
+        <div class="footer-links-wrapper">
+            <div class="footer-links">
+                <a href="index">SUPPORT</a> | <a href="index">CAREERS</a> | <a href="index">ABOUT</a> | <a href="index">PRIVACY</a> | <a href="index">TERMS</a>
+            </div>
+            <div class="copyright">©2016 rLoop, inc.</div>
+        </div>
+        <div id="socialicons">
+          <a class="icon" href="https://twitter.com/DruidGameworks" title="Follow with Twitter" target="_blank"><i class="fa fa-twitter"></i></a>
+          <a class="icon" href="https://www.facebook.com/DruidGameworks/" title="Follow with Facebook" target="_blank"><i class="fa fa-facebook"></i></a>
+          <a class="icon" href="https://plus.google.com/u/0/+DruidGameworksStudio/posts" title="Follow with Google Plus" target="_blank"><i class="fa fa-google-plus"></i></a>
+          <a class="icon" href="https://www.youtube.com/user/DruidGameworks" title="Follow with YouTube" target="_blank"><i class="fa fa-youtube"></i></a>
+        </div>
+      </div>
+    </footer>
+</body>
+<script type="text/javascript" src="../js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+</html>
