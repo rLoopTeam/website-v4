@@ -9,9 +9,9 @@
     "compile_less": "lessc src/assets/styles/main.less src/assets/styles/compiled/main.css",
     "build": "npm run compile_less && shjs compile.js",
     "_livereload": "livereload build",
-    "_nodemon": "nodemon -q -e html,js,json,jpg,jpeg,png,less -i build -i node_modules -x \"npm run build\"",
+    "_nodemon": "nodemon -q -e html,js,json,jpg,jpeg,png,less -i build -i node_modules -x \"npm cache clean\" -x \"npm run build\" ",
     "_httpserver": "http-server -r -c-1 build",
-    "dev": "npm cache clean && concurrently \"npm run _httpserver\" \"npm run _nodemon\" \"npm run _livereload\""
+    "dev": "concurrently \"npm run _httpserver\" \"npm run _nodemon\""
   },
   "devDependencies": {
     "concurrently": "^2.0.0",
